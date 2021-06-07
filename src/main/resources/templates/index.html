@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schedule</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
 </head>
-<body>
-<div>lalalala</div>
+<body class="bg-light">
+<div class="container">
+    <main>
+<table class="table table-striped pt-5">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Patient</th>
+        <th scope="col">Medical</th>
+        <th scope="col">Doctor</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="therapy : ${cases}">
+        <th scope="row"></th>
+        <td th:text="${therapy.patient}"></td>
+        <td th:text="${therapy.medical}"></td>
+        <td th:text="${therapy.doctor}"></td>
+        <td th:text="${therapy.date}"></td>
+        <td th:text="${therapy.time}"></td>
+        <td th:text="${therapy.status}"></td>
+    </tr>
+    </tbody>
+</table>
+    </main>
+</div>
 </body>
 </html>
