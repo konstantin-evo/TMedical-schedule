@@ -8,7 +8,7 @@ import javax.jms.JMSException;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
-public class JsonMessageConverter {
+public class JSONMessageConverter {
 
     @Autowired
     private ObjectMapper mapper;
