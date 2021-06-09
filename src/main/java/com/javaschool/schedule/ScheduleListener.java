@@ -28,13 +28,13 @@ public class ScheduleListener {
     }
 
     @JmsListener(destination = "${activemq.destination}", containerFactory = "jmsFactory")
-    public void processMessage(String response) throws JsonProcessingException {
+    public void updateSchedule(String response) throws JsonProcessingException {
         list = service.getSchedule(response);
         log.info("Schedule update > " + list);
     }
 
     @PostConstruct
-    public void init() throws JsonProcessingException {
+    public void initSchedule() throws JsonProcessingException {
         receiverConfigBean.connectionFactory();
         list = service.getSchedule();
         log.info("Schedule init  > " + list);
