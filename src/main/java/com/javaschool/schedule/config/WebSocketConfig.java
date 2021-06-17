@@ -18,7 +18,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-
         registry.addEndpoint("/schedule").withSockJS(); // use the /schedule endpoint (prefixed with /app as configured above) for incoming requests
     }
 }
