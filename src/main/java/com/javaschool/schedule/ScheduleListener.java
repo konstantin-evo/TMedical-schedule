@@ -34,7 +34,7 @@ public class ScheduleListener {
     @JmsListener(destination = "${activemq.destination}", containerFactory = "jmsFactory")
     public void updateSchedule(String response) throws JsonProcessingException {
         list = service.getSchedule(response);
-        messageTemplate.convertAndSend("/room.2","Update");
+        messageTemplate.convertAndSend("/message","Update");
         log.info("Schedule update > " + list);
     }
 
