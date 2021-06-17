@@ -16,7 +16,7 @@ public class ScheduleController {
         return ScheduleListener.list;
     }
 
-    @GetMapping("")
+    @GetMapping("/schedule")
     public String schedule(){
         return "index";
     }
